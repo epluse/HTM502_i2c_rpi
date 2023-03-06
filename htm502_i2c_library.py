@@ -81,7 +81,11 @@ class HTM502():
              (HTM502_COMMAND_READ_SINGLE_SHOT & 0xFF)], 6)
         if (i2c_response[2] == calc_crc8(i2c_response, 0, 2)) & (i2c_response[5] ==
                                                                  calc_crc8(i2c_response, 3, 5)):
-            temperature = ((float)(i2c_response[0]) * 256 + i2c_response[1]) / 100
+            temperature = ((float)(i2c_response[0]) * 256 + i2c_response[1])
+            if temperature > 55536:
+                temperature = (temperature - 65536) / 100
+            else:
+                temperature = temperature / 100
             humidity = ((float)(i2c_response[3]) * 256 + i2c_response[4]) / 100
             return temperature, humidity
         else:
@@ -94,7 +98,11 @@ class HTM502():
              (HTM502_COMMAND_READ_SINGLE_SHOT_DIS & 0xFF)], 6)
         if (i2c_response[2] == calc_crc8(i2c_response, 0, 2)) & (i2c_response[5] ==
                                                                  calc_crc8(i2c_response, 3, 5)):
-            temperature = ((float)(i2c_response[0]) * 256 + i2c_response[1]) / 100
+            temperature = ((float)(i2c_response[0]) * 256 + i2c_response[1])
+            if temperature > 55536:
+                temperature = (temperature - 65536) / 100
+            else:
+                temperature = temperature / 100
             humidity = ((float)(i2c_response[3]) * 256 + i2c_response[4]) / 100
             return temperature, humidity
         else:
@@ -107,7 +115,11 @@ class HTM502():
              (HTM502_COMMAND_READ_PERIODIC_MEASUREMENT & 0xFF)], 6)
         if (i2c_response[2] == calc_crc8(i2c_response, 0, 2)) & (i2c_response[5] ==
                                                                  calc_crc8(i2c_response, 3, 5)):
-            temperature = ((float)(i2c_response[0]) * 256 + i2c_response[1]) / 100
+            temperature = ((float)(i2c_response[0]) * 256 + i2c_response[1])
+            if temperature > 55536:
+                temperature = (temperature - 65536) / 100
+            else:
+                temperature = temperature / 100
             humidity = ((float)(i2c_response[3]) * 256 + i2c_response[4]) / 100
             return temperature, humidity
         else:
