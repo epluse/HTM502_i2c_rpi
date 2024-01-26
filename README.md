@@ -6,7 +6,8 @@
 ![HTM502](./images/HTM502.png) 
 
 
-[![button1](./images/learn-more.png)](https://www.epluse.com/products/humidity-instruments/humidity-sensing-elements/htm502/)   [![button2](./images/data-sheet.png)](https://www.epluse.com/fileadmin/data/product/htm502/datasheet_HTM502.pdf) 
+<!--[![button1](./images/learn-more.png)](https://www.epluse.com/products/humidity-instruments/humidity-sensing-elements/htm502/)   -->
+[![button2](./images/data-sheet.png)](https://www.epluse.com/fileadmin/data/product/htm502/datasheet_HTM502.pdf) 
 
 
 
